@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; 
+
+}
+
+  
+  mat-icon {
+    cursor: pointer;
+  }
+  
+  .action-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .table {
+    padding: 20px;
+    margin-left: .5rem!important;
+  }
+  
+  .table tbody tr td,
+  .table thead th,
+  .table thead {
+    border-left: 0.5px solid #dee2e6;
+    border-right: 0.5px solid #dee2e6;
+
+  }
+  
+  .output {
+    padding: 20px;
+  }
+  
+  .delete {
+    color: red  ;
+  }
+  
+  .done {
+    color: green;
+  }
+  
+  .edit {
+    color: yellow;
+  }
+  span.ui-column-resizer {
+    width: 100%;
+    height: 100%;
+    cursor: col-resize;
+    padding: 30px;
+  
+  }
+  /* body {
+    overflow-x: hidden;
+  } */
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+   
+  }
+ 
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.6rem;
+    height: 70px;
+    color: #fff; 
+    border-bottom: 2px solid #e0e4e8;
+  }
+  
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+
+  #sidebar-wrapper .list-group-item {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+    width: 15rem;
+    height: 50px;
+    color: #fff; 
+  }
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+
+  }
+ 
+   .mr-sm-2, .mx-sm-2 {
+    margin-right: .5rem!important;
+    margin-left: .5rem!important;
+   }
+  @media (min-width: 1000px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    
+    }
+  }
+
+   .bg-light {
+    background-color: #0a2845 !important;
+  } 
+  .nav-link {
+    color: #f8f9fa !important;
+}
+  .border {
+    height: 70px;
+  }
+  /*toggle*/
+  #toggle {
+    display: block;
+    width: 28px;
+    height: 30px;
+    margin: 30px auto 10px;
+    margin-left: .5rem!important;
+    color: #fff; 
+  }
+
+  #toggle span:after,
+  #toggle span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -9px;
+  }
+  #toggle span:after{
+    top: 9px;
+  }
+  #toggle span {
+    position: relative;
+    display: block;
+  }
+  
+  #toggle span,
+  #toggle span:after,
+  #toggle span:before {
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 2px;
+  }
+  
+  /* on activation */
+  #toggle.on span {
+    background-color: transparent;
+  }
+  #toggle.on span:before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  #toggle.on span:after {
+    transform: rotate(-45deg) translate(7px, -8px);
+  }
+  #toggle.on + #menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  footer.page-footer .footer-copyright {
+    overflow: hidden;
+    color: rgba(255,255,255,0.6);
+    background-color:rgba(75, 103, 128, 0.99);
+}
+
+.modal {
+                    position: fixed !important;
+                    left: 40%;
+                    top: 40%;
+                   
+}
+
+.icon{
+  color: cornflowerblue;
+  margin-right: .5rem!important;
+  margin-top: .5rem!important;
+
+}
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #fff;
+  color: black;
+  margin-left: .5rem!important;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;
+  margin-left: .5rem!important;}
+
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #fff;
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}

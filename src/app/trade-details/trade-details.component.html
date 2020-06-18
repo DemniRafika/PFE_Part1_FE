@@ -1,0 +1,94 @@
+
+<header>
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+          <a routerLink="trades" class="nav-link" routerLinkActive="active">Trade List</a>
+      </li>
+  
+      <li class="nav-item">
+          <a routerLink="add" class="nav-link" routerLinkActive="active">Add Trade</a>
+      </li>
+  </ul>
+  
+  </nav>
+  
+</header>
+
+<div class="container">
+  <br>
+    <h2 style="text-align: center;">Trade Details</h2>
+
+<hr/>
+<div class="row">
+      <div class="col-md-4">
+
+<div *ngIf="trade">
+  <div>
+    <label><b>Firm: </b></label> {{trade.firm}}
+  </div>
+  <div>
+    <label><b>Trade date: </b></label> {{trade.date}}
+  </div>
+  <div>
+    <label><b>Product: </b></label> {{trade.product}}
+  </div>  
+  <div>
+    <label><b>Contract: </b></label> {{trade.contract}}
+  </div> 
+  <div>
+    <label><b>B/S: </b></label> {{trade.bs}}
+  </div> 
+  <div>
+    <label><b>Quantity: </b></label> {{trade.qty}}
+  </div> 
+  <div>
+    <label><b>Price: </b></label> {{trade.price}}
+  </div> 
+  <div>
+    <label><b>Account: </b></label> {{trade.account}}
+  </div>
+  <div>
+    <label><b>Order: </b></label> {{trade.order}}
+  </div>
+  <div>
+    <label><b>Org: </b></label> {{trade.org}}
+  </div>
+  <div>
+    <label><b>CTI: </b></label> {{trade.cti}}
+  </div>
+</div>
+</div>
+  <div class="row">
+        <div class="col-md-12">
+  <div>
+    <label><b>Traded As: </b></label> {{trade.tradedAs}}
+  </div>
+  <div>
+    <label><b>Order Type: </b></label> {{trade.orderType}}
+  </div>
+  <div>
+    <label><b>Bkr: </b></label> {{trade.bkr}}
+  </div>
+  <div>
+    <label><b>Opp Firm: </b></label> {{trade.oppFirm}}
+  </div>
+  <div>
+    <label><b>Opp Brkr: </b></label> {{trade.oppBrkr}}
+  </div>
+  <div>
+    <label><b>Time BrkT: </b></label> {{trade.timeBrkt}}
+  </div>
+</div>
+<button (click)="list()" class="btn btn-primary">Back to Trade List</button><br>
+</div>
+</div>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <span>All Rights Reserved 2020 @Copyrights</span>
+  </div>
+</footer>

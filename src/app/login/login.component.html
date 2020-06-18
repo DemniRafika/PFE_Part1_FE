@@ -1,0 +1,61 @@
+<!-- <app-menu></app-menu>
+<div class="container col-lg-6">
+    <h1 class="text-center">Login</h1>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-group">
+          <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+          <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+          <div class="form-group">
+            <label for="username">User Name :</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" placeholder="Enter User Name"
+              name="username">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Enter password"
+              name="password">
+          </div>
+          <button (click)=handleLogin() class="btn btn-success">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>  -->
+<!-- Toolbar -->
+<mat-toolbar  >
+  <div class="inline-left">
+    <div><a href="https://www.fisglobal.com" target="_blank" class="positronx">FIS</a></div>
+    </div>
+    <!-- <span class="nav-tool-items"> -->
+      <div class="inline-right">
+      <a mat-button routerLink="/login" routerLinkActive="active">Log in</a>
+      
+      <a mat-button mat-raised-button routerLink="/register" routerLinkActive="active" >Register</a>
+      </div>
+    <!-- </span> -->
+  </mat-toolbar>
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form">
+        <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+        <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput  [(ngModel)]="username" placeholder="Enter User Name" name="username">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput type="password" placeholder="Password"  [(ngModel)]="password" id="password" placeholder="Enter password"
+            name="password">
+          </mat-form-field>
+        </mat-card-content>
+        <button mat-stroked-button color="accent" class="btn-block" (click)="handleLogin()">Log in</button>
+      </form>
+    </mat-card>
+  
+  </div>

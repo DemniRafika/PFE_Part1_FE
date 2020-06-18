@@ -1,0 +1,145 @@
+<header>
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+          <a routerLink="trades" class="nav-link" routerLinkActive="active">Trade List</a>
+      </li>
+  
+      <li class="nav-item">
+          <a routerLink="add" class="nav-link" routerLinkActive="active">Add Trade</a>
+      </li>
+  </ul>
+  
+  </nav>
+  
+  </header>
+  
+  <div class="container">
+  <br>
+    <h2 style="text-align: center;"> Update Trade</h2>
+
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="row">
+      
+          <div class="col-md-2">
+
+            <div class="form-group">
+              <label for="name">Firm</label>
+              <input type="text" class="form-control" id="firm" required [(ngModel)]="trade.firm" name="firm">
+            </div>
+
+              <div class="form-group">
+               <label for="name">Trade date</label>
+               <input type="text" class="form-control" id="date" required [(ngModel)]="trade.date" name="date">
+             </div>
+
+              <div class="form-group">
+               <label for="name">Product</label>
+               <input type="text" class="form-control" id="product" required [(ngModel)]="trade.product" name="product">
+              </div>
+
+              <div class="form-group">
+               <label for="name">Contract</label>
+               <input type="text" class="form-control" id="contract" required [(ngModel)]="trade.contract" name="contract">
+              </div>
+
+
+          </div>
+    
+          <div class="col-md-2">
+
+            <div class="form-group">
+              <label for="name">B/S</label>
+              <input type="text" class="form-control" id="bs" required [(ngModel)]="trade.bs" name="bs">
+             </div>
+
+             <div class="form-group">
+              <label for="name">Quantity</label>
+              <input type="text" class="form-control" id="qty" required [(ngModel)]="trade.qty" name="qty">
+             </div>
+
+             <div class="form-group">
+              <label for="name">Price</label>
+              <input type="text" class="form-control" id="price" required [(ngModel)]="trade.price" name="price">
+             </div>
+
+             <div class="form-group">
+              <label for="name">Account</label>
+              <input type="text" class="form-control" id="account" required [(ngModel)]="trade.account" name="account">
+             </div>
+
+          </div>
+
+          
+          <div class="col-md-2">
+
+            <div class="form-group">
+              <label for="name">Order</label>
+              <input type="text" class="form-control" id="order" required [(ngModel)]="trade.order" name="order">
+             </div>
+
+             <div class="form-group">
+              <label for="name">Org</label>
+              <input type="text" class="form-control" id="org" required [(ngModel)]="trade.org" name="org">
+             </div>
+
+             <div class="form-group">
+              <label for="name">CTI</label>
+              <input type="text" class="form-control" id="cti" required [(ngModel)]="trade.cti" name="cti">
+             </div>
+
+             <div class="form-group">
+              <label for="name">Traded As</label>
+              <input type="text" class="form-control" id="tradedAs" required [(ngModel)]="trade.tradedAs" name="tradedAs">
+             </div>
+
+          </div>
+          
+
+          <div class="col-md-2">
+
+            <div class="form-group">
+              <label for="name">order Type</label>
+              <input type="text" class="form-control" id="orderType" required [(ngModel)]="trade.orderType" name="orderType">
+             </div>
+
+             <div class="form-group">
+              <label for="name">Bkr</label>
+              <input type="text" class="form-control" id="bkr" required [(ngModel)]="trade.bkr" name="bkr">
+             </div>
+
+             <div class="form-group">
+              <label for="name">Opp Firm</label>
+              <input type="text" class="form-control" id="oppFirm" required [(ngModel)]="trade.oppFirm" name="oppFirm">
+             </div>
+
+             <div class="form-group">
+              <label for="name">Opp Bkr</label>
+              <input type="text" class="form-control" id="oppBrkr" required [(ngModel)]="trade.oppBrkr" name="oppBrkr">
+             </div>
+
+          </div>
+
+          <div class="col-md-2">
+
+            <div class="form-group">
+              <label for="name">Time Brkt</label>
+              <input type="text" class="form-control" id="timeBrkt" required [(ngModel)]="trade.timeBrkt" name="timeBrkt">
+             </div>
+          </div>
+    </div>
+    
+    
+          
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <span>All Rights Reserved 2020 @Copyrights</span>
+  </div>
+</footer>

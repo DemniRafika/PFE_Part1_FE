@@ -1,0 +1,472 @@
+
+
+ <div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading"><mat-icon>language</mat-icon>CME Group </div>
+    <div class="list-group list-group-flush">
+      
+      <a href="/trades" class="list-group-item list-group-item-action bg-light"><mat-icon aria-label="Example home icon">home</mat-icon></a>
+      <a href="https://www.cmegroup.com/" class="list-group-item list-group-item-action bg-light"><mat-icon>history</mat-icon></a>
+      <a href="#" class="list-group-item list-group-item-action bg-light"><mat-icon>event</mat-icon></a>
+      <a href="#" class="list-group-item list-group-item-action bg-light"><mat-icon>perm_identity</mat-icon></a>
+      <a href="login" class="list-group-item list-group-item-action bg-light"><mat-icon>logout</mat-icon></a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border">
+      <a href="#menu" id="toggle"><span></span></a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <!-- <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Search</button> -->
+          <mat-icon style="color: aliceblue;">search</mat-icon>
+        </form>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+          <li class="nav-item active">
+            <a class="nav-link " href="/trades" >Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cmegroup.com/">Abouts</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <mat-icon>account_circle</mat-icon></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+              <a class="dropdown-item" href="#">My account</a>
+              <a class="dropdown-item" href="#">Log out</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main-content">
+      <div class="container-fluid">
+       <br>
+       <br>
+        <div class="panel-heading">
+          <div class="container">
+          
+            <div class="row">
+    
+              
+            <!-- <div class="col-sm-2">
+              <input type="number" class="form-control"  [(ngModel)]="value1" id="nb" required  name="nb" >
+            </div>
+            
+            <div class="col-sm">
+              <button class="btn btn-primary" type="submit" (click)="addRow(value1)" >Update Rows</button>
+            </div> -->
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="number"  [(ngModel)]="value1" placeholder=" Number of Trades" name="nb" required>
+              <button mat-button color="primary" type="submit" (click)="addRow(value1)">Update Rows</button>
+            </form>
+          </div>
+            
+       
+          <br>
+        <form [formGroup]="tradeTable" (ngSubmit)="onFormSubmit()">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead  class="text-nowrap"> 
+                  
+                  <th><input type="checkbox" name="websitecheck" (click) = "checkuncheckall()"></th>
+                  <th>Firm <span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Date <span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Product <span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Contract <span class="ui-column-resizer" dragableColumn> </span></th> 
+                  <th>B/S<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Qty<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Price<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Account<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Order<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Org<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Cti<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Traded As<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Order Type<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Bkr<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Opp Firm<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Opp Brkr<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Time Brkt<span class="ui-column-resizer" dragableColumn> </span></th>
+     
+              </thead>
+              <tbody>
+    
+                <ng-container formArrayName="tableRows" *ngFor="let group of getFormControls.controls ; let i=index" >
+                  <tr  [formGroupName]="i" >
+                
+                  <td><input type="checkbox" name="websitecheck" [checked]="isChecked" ></td>
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="firm"  required >
+                    </mat-form-field>
+                  </td>
+                 
+                  <td>
+                    <mat-form-field>
+                      <input matInput matInput [matDatepicker]="picker" formControlName="date"  required>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="product" required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput matInput [matDatepicker]="picker1" formControlName="contract"  required>
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                  </td>
+    
+                  
+                
+                  <td>
+                    <mat-form-field>
+                      <mat-select formControlName="bs"  required >
+                        <mat-option value="B">B</mat-option>
+                        <mat-option value="S">S</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text" formControlName="qty" required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="price" required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text" formControlName="account"  required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="order" required >
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <mat-select formControlName="org" required>
+                        <mat-option value="A">A</mat-option>
+                        <mat-option value="B">B</mat-option>
+                        <mat-option value="C">C</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="cti"  required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <mat-select formControlName="tradedAs" required>
+                        <mat-option value="S">S</mat-option>
+                        <mat-option value="C">C</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="orderType" required >
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text" formControlName="bkr" required >
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="oppFirm" required >
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="oppBrkr" required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <mat-select formControlName="timeBrkt" required >
+                        <mat-option value="B">B</mat-option>
+                        <mat-option value="P">P</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </tr>
+    
+               
+                </ng-container>
+              </tbody>
+            </table>
+            <div class="action-container">
+              <button class="ok" mat-raised-button [disabled]="tradeTable.invalid" *ngIf="isChecked==true" type="submit" >Submit</button>
+            </div>
+            </div>
+      </form>
+    </div>
+    </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+  
+<!-- Table-->
+<!--     <div class="main-content">
+      <div class="container-fluid">
+       <br>
+        <h2 style="text-align: center;">Trades</h2>
+      
+        <div class="panel-heading">
+          <div class="container">
+          
+            <div class="row">
+    
+              <div class="col-sm-2">
+                <label><b>Number of Trade: </b></label>
+              </div>
+    
+            <div class="col-sm-2">
+              <input type="number" class="form-control"  [(ngModel)]="value1" id="nb" required  name="nb" >
+            </div>
+            
+            <div class="col-sm">
+              <button class="btn btn-primary" type="submit" (click)="addRow(value1)" >Update Rows</button>
+            </div>
+          </div>
+            
+       
+          <br>
+        <form [formGroup]="tradeTable" (ngSubmit)="onFormSubmit()">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead  class="text-nowrap"> 
+                  
+                  <th><input type="checkbox" name="websitecheck" (click) = "checkuncheckall()"></th>
+                  <th>Firm <span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Date <span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Product <span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Contract <span class="ui-column-resizer" dragableColumn> </span></th> 
+                  <th>BS<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Qty<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Price<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Account<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Order<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Org<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Cti<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Traded As<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Order Type<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Bkr<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Opp Firm<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Opp Brkr<span class="ui-column-resizer" dragableColumn> </span></th>
+                  <th>Time Brkt<span class="ui-column-resizer" dragableColumn> </span></th>
+     
+              </thead>
+              <tbody>
+    
+                <ng-container formArrayName="tableRows" *ngFor="let group of getFormControls.controls ; let i=index" >
+                  <tr  [formGroupName]="i" >
+                
+                  <td><input type="checkbox" name="websitecheck" [checked]="isChecked" ></td>
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="firm"  required >
+                    </mat-form-field>
+                  </td>
+                 
+                  <td>
+                    <mat-form-field>
+                      <input matInput matInput [matDatepicker]="picker" formControlName="date"  required>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="product" required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput matInput [matDatepicker]="picker1" formControlName="contract"  required>
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                  </td>
+    
+                  
+                
+                  <td>
+                    <mat-form-field>
+                      <mat-select formControlName="bs"  required >
+                        <mat-option value="B">B</mat-option>
+                        <mat-option value="S">S</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text" formControlName="qty" required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="price" required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text" formControlName="account"  required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="order" required >
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <mat-select formControlName="org" required>
+                        <mat-option value="A">A</mat-option>
+                        <mat-option value="B">B</mat-option>
+                        <mat-option value="C">C</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="cti"  required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <mat-select formControlName="tradedAs" required>
+                        <mat-option value="S">S</mat-option>
+                        <mat-option value="C">C</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="orderType" required >
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text" formControlName="bkr" required >
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="oppFirm" required >
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <input matInput type="text"  formControlName="oppBrkr" required>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field>
+                      <mat-select formControlName="timeBrkt" required >
+                        <mat-option value="B">B</mat-option>
+                        <mat-option value="P">P</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </tr>
+    
+               
+                </ng-container>
+              </tbody>
+            </table>
+            <div class="action-container">
+              <button mat-raised-button [disabled]="tradeTable.invalid" *ngIf="isChecked==true" type="submit" >Submit</button>
+            </div>
+            </div>
+      </form>
+    </div>
+    </div>
+      </div>
+    </div>
+  </div> -->
+<!-- fin table-->
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+ <!-- Copyright -->
+ <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <a href="https://www.cmegroup.com/"> CMEGroup.com</a>
+</div>
+<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+<!-- The Modal -->
+<div class="modal" id="myModal" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Information</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+      <h5><mat-icon class="icon">info</mat-icon>Trade(s) Injected Successfully!</h5>
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary " data-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
+  </div>
+</div>

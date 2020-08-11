@@ -113,6 +113,7 @@ Let's define all the spring boot starter maven dependencies required to build th
 </project>
 
 # 3. Project Structure
+https://github.com/DemniRafika/PFE_Project/blob/master/structure.PNG
 # 4. Configuring RabbitMQ
 
 # RABBITMQ 

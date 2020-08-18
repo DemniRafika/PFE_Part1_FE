@@ -38,7 +38,6 @@ import { RegisterComponent } from './register/register.component';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MatSidenavModule} from  '@angular/material/sidenav';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -53,7 +52,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UpdateTradeComponent,
     RegisterComponent,
     UserProfileComponent,
-    SidebarComponent,
+
     
   ],
   imports: [

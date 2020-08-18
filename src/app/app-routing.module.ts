@@ -8,7 +8,7 @@ import { UpdateTradeComponent } from './update-trade/update-trade.component';
 import { TradeDetailsComponent } from './trade-details/trade-details.component';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'trade', pathMatch: 'full' },
@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'details/:id', component: TradeDetailsComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'user-profile', component:  UserProfileComponent },
-  {path: 'sidebar', component:   SidebarComponent },
+
 ];
 
 @NgModule({

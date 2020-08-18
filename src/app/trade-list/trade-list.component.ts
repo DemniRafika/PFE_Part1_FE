@@ -4,12 +4,11 @@ import { TradeService } from "./../trade.service";
 import { Trade } from "./../trade";
 
 import { Router , ActivatedRoute } from '@angular/router';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { AuthenticationService } from '../login/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
-import { StyleCompiler } from '@angular/compiler';
-import { style } from '@angular/animations';
+
 //import * as $ from 'jquery';
 
 declare var $: any 
@@ -133,7 +132,6 @@ $(document).on( 'click', '.ok', function () {
       this.save((this.tradeTable.get('tableRows') as FormArray).at(i).value);
     }
   }
-
 
   checkuncheckall()
   {

@@ -8,8 +8,8 @@
       
       <a href="/trades" class="list-group-item list-group-item-action bg-light"><mat-icon aria-label="Example home icon">home</mat-icon></a>
       <a href="https://www.cmegroup.com/" class="list-group-item list-group-item-action bg-light"><mat-icon>history</mat-icon></a>
-      <a href="#" class="list-group-item list-group-item-action bg-light"><mat-icon>event</mat-icon></a>
-      <a href="#" class="list-group-item list-group-item-action bg-light"><mat-icon>perm_identity</mat-icon></a>
+      <!-- <a href="#" class="list-group-item list-group-item-action bg-light"><mat-icon>event</mat-icon></a>
+      <a href="#" class="list-group-item list-group-item-action bg-light"><mat-icon>perm_identity</mat-icon></a> -->
       <a href="login" class="list-group-item list-group-item-action bg-light"><mat-icon>logout</mat-icon></a>
     </div>
   </div>
@@ -20,11 +20,10 @@
       <a href="#menu" id="toggle"><span></span></a>
       
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline">
+        <!-- <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <!-- <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Search</button> -->
           <mat-icon style="color: aliceblue;">search</mat-icon>
-        </form>
+        </form> -->
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
           <li class="nav-item active">
             <a class="nav-link " href="/trades" >Home <span class="sr-only">(current)</span></a>
@@ -227,7 +226,7 @@
               </tbody>
             </table>
             <div class="action-container">
-              <button class="ok" mat-raised-button [disabled]="tradeTable.invalid" *ngIf="isChecked==true" type="submit" >Submit</button>
+              <button class="ok"  id="send" mat-raised-button [disabled]="tradeTable.invalid" *ngIf="isChecked==true" type="submit" >Submit</button>
             </div>
             </div>
       </form>

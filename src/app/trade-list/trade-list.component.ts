@@ -130,6 +130,7 @@ $(document).on( 'click', '.ok', function () {
       console.log( (this.tradeTable.get('tableRows') as FormArray).at(i).value);
       this.submitted = true; 
       this.save((this.tradeTable.get('tableRows') as FormArray).at(i).value);
+      this.tradeTable.reset()
     }
   }
 
